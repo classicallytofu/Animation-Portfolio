@@ -1,0 +1,223 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77a6b1 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+}
+
+#heroVideo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.mute-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20; /* Ensure it's on top */
+}
+
+.mute-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+}
+
+.hero-text {
+    max-width: 400px;
+}
+
+.hero-text h2 {
+    color: #fff;
+    font-size: 24px; /* Larger title font size */
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #77a6b1;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #5691a3;
+}
+
+/* About Section Styles */
+section#about {
+    background: #e2e2e2;
+    padding: 40px 0; /* Increase padding for better spacing */
+    text-align: center; /* Center align content */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    gap: 20px;
+}
+
+.about-image {
+    border-radius: 50%;
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    object-fit: cover;
+    border: 3px solid #77a6b1; /* Optional: border for emphasis */
+}
+
+.about-text {
+    font-size: 1.2em; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    max-width: 600px; /* Limit the width for better readability */
+}
+
+.about-text p {
+    margin: 0;
+}
+
+/* Projects Section Styles */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 20px;
+}
+
+.featured-projects {
+    flex: 1;
+    min-width: 300px; /* Ensure a minimum width for the featured project */
+}
+
+.projects-grid {
+    flex: 2; /* Take up more space for the grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    gap: 10px;
+    background-color: black;
+    border-radius: 10px; /* Rounded corners for the black box */
+    padding: 10px;
+}
+
+.projects-grid img {
+    border-radius: 10px; /* Rounded corners for project images */
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .projects-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+}
+
+
+
+/* Contact Styles */
+section#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+section#contact ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+
