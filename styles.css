@@ -204,6 +204,7 @@ section#about {
 .projects-container {
     display: flex;
     gap: 20px; /* Space between the featured project and the grid */ 
+    flex-direction: row;
 }
 
 .project-display {
