@@ -17,11 +17,11 @@ body {
 
 /* Header Styles */
 header {
-    background: #333;
+    background: #000000;
     color: #fff;
     padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77a6b1 3px solid;
+    min-height: 0px;
+    /* border-bottom: #77a6b1 3px solid; */
 }
 
 header a {
@@ -44,16 +44,34 @@ header li {
 
 header nav {
     float: right;
-    margin-top: 10px;
+    margin-top: 0px;
+}
+
+/* Container to position background */
+#hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, black 79%, transparent);
+    z-index: -1; /* Place it behind the hero content */
+    width: 100vw; /* Full viewport width */
+    height: 120vh; /* Full viewport height */
+    margin-left: calc(50% - 50vw); /* Center it */
 }
 
 /* Hero Section */
 #hero {
     position: relative;
+    overflow: hidden; /* Ensure no content overflows */
+    padding: 0; /* Remove padding to fit the background */
 }
 
+/* Hero Content */
 .hero-content {
     position: relative;
+    z-index: 1; /* Ensure hero content is above the background */
 }
 
 #heroVideo {
@@ -77,7 +95,7 @@ header nav {
 }
 
 .mute-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .hero-overlay {
@@ -86,7 +104,7 @@ header nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
     display: flex;
     align-items: center;
     justify-content: left;
@@ -110,7 +128,7 @@ header nav {
 }
 
 .btn {
-    background-color: #77a6b1;
+    background-color: #ff7800;
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
@@ -128,6 +146,8 @@ section#about {
     background: #e2e2e2;
     padding: 40px 0; /* Increase padding for better spacing */
     text-align: center; /* Center align content */
+    position: relative; /* Allows for positioning of pseudo-elements */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .about-content {
@@ -135,6 +155,9 @@ section#about {
     flex-direction: column; /* Stack image and text vertically */
     align-items: center;
     gap: 20px;
+    max-width: 100%; /* Ensure it doesn’t exceed container width */
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Padding to ensure no overflow */
 }
 
 .about-image {
@@ -149,32 +172,88 @@ section#about {
     font-size: 1.2em; /* Increase font size */
     font-weight: bold; /* Make text bold */
     max-width: 600px; /* Limit the width for better readability */
+    justify-content: center;
 }
 
-.about-text p {
+.social-links {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Space between icons */
 }
+
+.social-links li {
+    display: inline;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+    font-size: 24px; /* Size of icons */
+}
+
+.social-links a:hover {
+    color: #ff7800; /* Change color on hover */
+}
+
+
 
 /* Projects Section Styles */
 .projects-container {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px;
+    gap: 20px; /* Space between the featured project and the grid */ 
 }
 
-.featured-projects {
-    flex: 1;
-    min-width: 300px; /* Ensure a minimum width for the featured project */
+.project-display {
+    display: flex; /* Use flexbox to position image and description side by side */
+    align-items: center; /* Vertically center the content */
+    gap: 20px; /* Space between image and description */
+    background-color: #000; /* Background color for the entire section */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    max-width: 50%; /* Ensure it does not exceed the container width */
+    margin-bottom: 20px; /* Space between different project displays */
+}
+
+.project-image {
+    flex: 1; /* Allow image to take up available space */
+    max-width: 50%; /* Limit the width of the image */
+}
+
+.project-image img {
+    border-radius: 10px; /* Rounded corners for the image */
+    max-width: 100%; /* Ensure image scales with container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.project-description {
+    flex: 2; /* Allow description to take up remaining space */
+    color: #fff; /* Text color for the description */
+    max-width: 50%; /* Limit the width of the description */
+}
+
+.project-description h3 {
+    font-size: 24px; /* Title font size */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.project-description p {
+    font-size: 18px; /* Description font size */
+    line-height: 1.6; /* Line height for readability */
 }
 
 .projects-grid {
-    flex: 2; /* Take up more space for the grid */
+    flex: 1; /* Grow and shrink as needed */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-    gap: 10px;
+    gap: 15px;
     background-color: black;
-    border-radius: 10px; /* Rounded corners for the black box */
-    padding: 10px;
+    border-radius: 15px; /* Rounded corners for the black box */
+    padding: 15px;
+    min-width: 300px; /* Set a minimum width to prevent items from getting too small */
+    max-width: 35%; /* Ensure it doesn't exceed half of the container width */
 }
 
 .projects-grid img {
@@ -183,11 +262,26 @@ section#about {
     height: auto;
 }
 
+/* Adjust layout on smaller screens */
 @media (max-width: 800px) {
-    .projects-container {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
+    .project-display {
+        flex-direction: column; /* Stack image and description vertically on smaller screens */
+        align-items: center; /* Center the content */
+    }
+
+    .project-image, .project-description {
+        max-width: 100%; /* Allow full width on small screens */
+    }
+
+    .project-description {
+        text-align: center; /* Center align the description text */
     }
 }
+
+
+
+
+
 
 
 
