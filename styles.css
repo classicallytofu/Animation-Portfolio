@@ -47,22 +47,6 @@ header nav {
     margin-top: 0px;
 }
 
-.hamburger {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.3s;
-}
-
 /* Container to position background */
 #hero-background {
     position: absolute;
@@ -312,50 +296,12 @@ video {
     body, header {
         margin: 0;
         padding: 0;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger.active div:nth-child(2) {
-        opacity: 0; /* Hide the middle line */
-    }
-
-    .hamburger.active div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px); /* Transform top line */
-    }
-
-    .hamburger.active div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px); /* Transform bottom line */
+        text-align: center;
     }
 
     /* Mobile Navigation Menu */
     nav ul {
         display: none;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #000;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    nav ul.active {
-        display: block;
-    }
-
-    nav ul li {
-        float: none;
-        display: block;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    nav ul li a {
-        font-size: 18px;
     }
 
     /* Adjust Header */
@@ -367,7 +313,13 @@ video {
     /* Hero Section Adjustments */
     #hero {
         padding: 0; /* Remove padding to fit the video */
+        width:100vw;
     }
+
+    /* Container to position background */
+#hero-background {
+    background: white
+}
 
     .hero-content {
         position: relative;
@@ -378,30 +330,52 @@ video {
         width: 100%; /* Full width video */
     }
 
-    .hero-overlay {
-        position: static; /* Place it below the video */
-        background: none;
-        padding: 0;
-        margin: 0;
-    }
-
     /* Adjust Layout */
     #hero {
         padding: 0;
         margin: 0;
     }
 
-    .hero-text {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-        padding: 20px;
-        background: #000;
+     /* Hide Desktop Hero Overlay */
+     .hero-overlay {
+        display: none; /* Hide the overlay on mobile */
     }
 
-    .btn {
+    /* Show Mobile Hero Overlay */
+    .mobile-hero-overlay {
+        display: block;
+        background: black
+        
+    }
+
+    .mobile-hero-overlay .hero-text {
+        margin: 0 auto;
+        padding: 20px;
+        background: #000;
+        color: #fff;
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .mobile-hero-overlay h2 {
+        font-size: 24px; /* Larger title font size */
+        margin-bottom: 10px;
+    }
+
+    .mobile-hero-overlay p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-hero-overlay .btn {
         display: block;
         margin: 20px auto;
+        padding: 10px 20px;
+        background: #ff6700;
+        color: #fff;
+        width: 70%;
+        text-decoration: none;
+        border-radius: 50px;
     }
 
     /* About Section */
@@ -409,10 +383,12 @@ video {
         background: #ffffff; /* White background */
         padding: 40px 0; /* Increase padding for better spacing */
         margin: 0;
+        width: 100vw;
     }
 
     .about-content {
         padding: 0;
+        width: 80vw;
     }
 
     .about-text {
@@ -427,19 +403,26 @@ video {
     /* Projects Grid */
     .projects-container {
         flex-direction: column;
-        gap: 0;
+        gap: 10;
+        align-items: center;
+        padding: 0%;
+
     }
 
     .project-display {
-        flex-direction: column;
-        align-items: center;
-        max-width: 100%;
-        margin: 0;
-        padding: 10px;
+    display: block;
+    align-items: center; /* Vertically center the content */
+    gap: 20px; /* Space between image and description */
+    background-color: #000; /* Background color for the entire section */
+    border-radius: 0px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    max-width: 100%; /* Ensure it does not exceed the container width */
+    
     }
 
     .project-image img {
-        max-width: 100%;
+        max-width: 160%;
+        align-items: center;
     }
 
     .project-description {
@@ -448,7 +431,8 @@ video {
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        display:block;
+        column-count: 2;
         padding: 10px; /* Adjust padding for mobile */
     }
 
