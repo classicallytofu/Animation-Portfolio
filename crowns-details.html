@@ -5,6 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>If Crowns You Seek - Project Details</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Black background for the entire page */
+        body {
+            background-color: #000;
+            color: #fff; /* White text for readability */
+        }
+
+        /* Container for the video and description */
+        .details-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        /* Push video to the left */
+        .project-video {
+            flex: 1; /* Allow video section to grow */
+            min-width: 300px; /* Minimum width for the video container */
+        }
+
+        .project-video video {
+            width: 100%;
+            height: auto;
+            border: 3px solid #fff; /* White border to distinguish from black background */
+        }
+
+        /* Project description next to video */
+        .project-description {
+            flex: 2; /* Allow description to take more space */
+            padding: 10px;
+        }
+
+        /* Mind Map section styling with larger items */
+        .mind-map {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px; /* Increased gap for better spacing */
+            justify-content: center;
+        }
+
+        .mind-map-item {
+            width: 200px; /* Larger size for mind map items */
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            transition: transform 0.2s ease;
+            border: 2px solid #fff; /* White border for contrast */
+        }
+
+        .mind-map-item:hover {
+            transform: scale(1.1); /* Slightly larger zoom on hover */
+        }
+
+        .mind-map-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mind-map-item a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mind-map-item:hover a {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 800px) {
+            .details-content {
+                flex-direction: column; /* Stack video and description */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,24 +115,52 @@
     <section id="project-details" class="container">
         <h2>If Crowns You Seek</h2>
         <div class="details-content">
+            <!-- Project video on the left -->
             <div class="project-video">
                 <video controls>
                     <source src="Assets/If Crowns You Seek - Original Short.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+            <!-- Project description on the right -->
             <div class="project-description">
                 <h3>Project Overview</h3>
-                <p>"If Crowns You Seek" is an original short animation that explores themes of purpose and destiny, reflecting on the biblical narrative of kingship. This project combines elements of traditional animation and modern storytelling techniques to convey a deep and meaningful message inspired by scripture.</p>
+                <p>"If Crowns You Seek" is an original short animation that explores themes of greed. This moralistic fable presents the idea that bad things can happen to people that are overly ambitious.</p>
                 
                 <h3>Inspiration & Process</h3>
-                <p>The project was inspired by the concept of kingship in the Bible, particularly the stories of King Saul, David, and Jesus as the ultimate king. The animation style was influenced by a combination of classic 2D animation techniques and modern digital tools, aiming to create a visually compelling and thematically rich narrative.</p>
+                <p>A huge inspiration for me was that liminal sense of space found in Studio Ghibli's Spirited Away. This inspiration bled into my prcoess, in that I started at the storyboarding stage (after designing my character and bit of waffling), like how Hayao Miyazaki does it. 
+                    
+                    Since I didn't have much time for this project, I was forced to use limited animation. Instead, I used parralax to create interest. </p>
                 
                 <h3>Tools Used</h3>
                 <ul>
                     <li>Adobe Animate</li>
                     <li>Photoshop</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- Mind map section for ideation process -->
+        <div class="mind-map">
+            <div class="mind-map-item">
+                <a href="Assets\If Crowns You Seek Assets/brainstorming plot for animation.png" target="_blank">Brainstorming</a>
+                <img src="Assets\If Crowns You Seek Assets/brainstorming plot for animation.png" alt="Brainstorming">
+            </div>
+            <div class="mind-map-item">
+                <a href="Assets/If Crowns You Seek Assets/Turnaround - Mysterious Royal Wanderer.png" target="_blank">Turnaround</a>
+                <img src="Assets/If Crowns You Seek Assets/Turnaround - Mysterious Royal Wanderer.png" alt="Turnaround">
+            </div>
+            <div class="mind-map-item">
+                <a href="Assets/If Crowns You Seek Assets/storyboard.jpg" target="_blank">storyboard 1</a>
+                <img src="Assets/If Crowns You Seek Assets/storyboard.jpg" alt="storyboard 1">
+            </div>
+            <div class="mind-map-item">
+                <a href="Assets/If Crowns You Seek Assets/02_storyboard.jpg" target="_blank">storyboard 2</a>
+                <img src="Assets/If Crowns You Seek Assets/02_storyboard.jpg" alt="storyboard 2">
+            </div>
+            <div class="mind-map-item">
+                <a href="Assets/If Crowns You Seek Assets/03_storyboard.jpg" target="_blank">storyboard 3</a>
+                <img src="Assets/If Crowns You Seek Assets/03_storyboard.jpg" alt="storyboard 3">
             </div>
         </div>
     </section>
@@ -51,6 +170,5 @@
             <p>&copy; 2024 Christopher Hagedon. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
