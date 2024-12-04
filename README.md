@@ -1,1 +1,1 @@
-My portfolio that i generated iteratively with ChatGPT.
+My portfolio generated with ChatGPT.
