@@ -246,13 +246,12 @@ section#about {
 .projects-grid {
     flex: 1; /* Grow and shrink as needed */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     background-color: black;
     border-radius: 15px; /* Rounded corners for the black box */
     padding: 15px;
     min-width: 300px; /* Set a minimum width to prevent items from getting too small */
-    max-width: 35%; /* Ensure it doesn't exceed half of the container width */
 }
 
 .projects-grid img {
