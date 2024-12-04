@@ -1,38 +1,63 @@
-// JavaScript for mute/unmute functionality
+// Mute/Unmute functionality for hero video
 const video = document.getElementById('heroVideo');
 const muteButton = document.getElementById('muteButton');
 
 muteButton.addEventListener('click', () => {
-    if (video.muted) {
-        video.muted = false;
-        muteButton.textContent = '🔊';
-    } else {
-        video.muted = true;
-        muteButton.textContent = '🔇';
-    }
+    video.muted = !video.muted;
+    muteButton.textContent = video.muted ? '🔇' : '🔊';
 });
 
-// Get the modal and image elements
+// Modal functionality for image enlargement
 const modal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
 const closeModal = document.getElementsByClassName("close")[0];
+const images = document.querySelectorAll(".enlargeable");  // Collect all enlargeable images
+let currentIndex = 0;  // Track the current image index
 
-// Loop through all enlargeable images and add click event
-document.querySelectorAll(".enlargeable").forEach(img => {
-    img.onclick = function() {
-        modal.style.display = "block";
-        modalImage.src = this.src;
+// Function to open modal and set image
+function openModal(index) {
+    currentIndex = index;
+    modalImage.src = images[currentIndex].src;
+    modal.style.display = "block";
+    document.addEventListener('keydown', handleKeydown);  // Add keyboard navigation
+}
+
+// Add click event listeners to enlargeable images
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openModal(index));
+});
+
+// Close modal on close button click
+closeModal.addEventListener('click', () => {
+    closeModalFunction();
+});
+
+// Close modal if clicking outside the image
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModalFunction();
     }
 });
 
-// When the close button is clicked, hide the modal
-closeModal.onclick = function() {
+// Close modal function
+function closeModalFunction() {
     modal.style.display = "none";
+    document.removeEventListener('keydown', handleKeydown);  // Remove keyboard navigation listener
 }
 
-// Hide modal on click outside the image
-modal.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+// Handle arrow key navigation and Escape key for modal
+function handleKeydown(event) {
+    if (event.key === 'ArrowRight') {
+        navigate(1);  // Move to next image
+    } else if (event.key === 'ArrowLeft') {
+        navigate(-1);  // Move to previous image
+    } else if (event.key === 'Escape') {
+        closeModalFunction();  // Close modal on Escape key
     }
+}
+
+// Navigate between images
+function navigate(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    modalImage.src = images[currentIndex].src;
 }
