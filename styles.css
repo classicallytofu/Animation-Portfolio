@@ -246,7 +246,7 @@ section#about {
 .projects-grid {
     flex: 1; /* Grow and shrink as needed */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     background-color: black;
     border-radius: 15px; /* Rounded corners for the black box */
