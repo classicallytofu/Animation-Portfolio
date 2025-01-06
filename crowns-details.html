@@ -29,7 +29,7 @@
         .project-video video {
             width: 100%;
             height: auto;
-            border: 3px solid #fff; /* White border to distinguish from black background */
+            /* Remove white border */
         }
 
         /* Project description next to video */
@@ -38,55 +38,17 @@
             padding: 10px;
         }
 
-        /* Mind Map section styling with larger items */
-        .mind-map {
-            margin-top: 30px;
+        /* Masonry layout for ideation process */
+        .crowns-gallery-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px; /* Increased gap for better spacing */
-            justify-content: center;
+            gap: 10px;
         }
 
-        .mind-map-item {
-            width: 200px; /* Larger size for mind map items */
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-            transition: transform 0.2s ease;
-            border: 2px solid #fff; /* White border for contrast */
-        }
-
-        .mind-map-item:hover {
-            transform: scale(1.1); /* Slightly larger zoom on hover */
-        }
-
-        .mind-map-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .mind-map-item a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .mind-map-item:hover a {
-            opacity: 1;
+        .crowns-gallery-grid img {
+            width: calc(100%); /* Each image takes up full width */
+            cursor: default; /* Disable pointer cursor */
+            transition: filter 0.4s; /* Slow down the animation */
         }
 
         /* Responsive adjustments */
@@ -94,19 +56,20 @@
             .details-content {
                 flex-direction: column; /* Stack video and description */
             }
+
+            .crowns-gallery-grid img {
+                width: 100%; /* Full width for mobile */
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Christopher Hagedon</h1>
+            <h1>CHRISTOPHER HAGEDON</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -140,26 +103,26 @@
             </div>
         </div>
 
-        <!-- Mind map section for ideation process -->
-        <div class="mind-map">
-            <div class="mind-map-item">
-                <a href="Assets\If Crowns You Seek Assets/brainstorming plot for animation.png" target="_blank">Brainstorming</a>
-                <img src="Assets\If Crowns You Seek Assets/brainstorming plot for animation.png" alt="Brainstorming">
+        <!-- Masonry layout for ideation process -->
+        <div class="crowns-gallery-grid gallery-grid">
+            <div class="gallery-item">
+                <p>Brainstorming</p>
+                <img src="Assets/If Crowns You Seek Assets/brainstorming plot for animation.png" alt="Brainstorming">
             </div>
-            <div class="mind-map-item">
-                <a href="Assets/If Crowns You Seek Assets/Turnaround - Mysterious Royal Wanderer.png" target="_blank">Turnaround</a>
+            <div class="gallery-item">
+                <p>Turnaround</p>
                 <img src="Assets/If Crowns You Seek Assets/Turnaround - Mysterious Royal Wanderer.png" alt="Turnaround">
             </div>
-            <div class="mind-map-item">
-                <a href="Assets/If Crowns You Seek Assets/storyboard.jpg" target="_blank">storyboard 1</a>
+            <div class="gallery-item">
+                <p>Storyboard 1</p>
                 <img src="Assets/If Crowns You Seek Assets/storyboard.jpg" alt="storyboard 1">
             </div>
-            <div class="mind-map-item">
-                <a href="Assets/If Crowns You Seek Assets/02_storyboard.jpg" target="_blank">storyboard 2</a>
+            <div class="gallery-item">
+                <p>Storyboard 2</p>
                 <img src="Assets/If Crowns You Seek Assets/02_storyboard.jpg" alt="storyboard 2">
             </div>
-            <div class="mind-map-item">
-                <a href="Assets/If Crowns You Seek Assets/03_storyboard.jpg" target="_blank">storyboard 3</a>
+            <div class="gallery-item">
+                <p>Storyboard 3</p>
                 <img src="Assets/If Crowns You Seek Assets/03_storyboard.jpg" alt="storyboard 3">
             </div>
         </div>
@@ -167,8 +130,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Christopher Hagedon. All rights reserved.</p>
+            <p>&copy; 2025 Christopher Hagedon. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

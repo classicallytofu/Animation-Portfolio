@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Apply professional sans serif font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ header a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 header ul {
@@ -198,68 +198,6 @@ section#about {
     color: #ff7800; /* Change color on hover */
 }
 
-/* Projects Section Styles */
-.projects-container {
-    display: flex;
-    gap: 20px; /* Space between the featured project and the grid */ 
-    flex-direction: row;
-}
-
-.project-display {
-    display: flex; /* Use flexbox to position image and description side by side */
-    align-items: center; /* Vertically center the content */
-    gap: 20px; /* Space between image and description */
-    background-color: #000; /* Background color for the entire section */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px; /* Padding inside the container */
-    max-width: 50%; /* Ensure it does not exceed the container width */
-    margin-bottom: 20px; /* Space between different project displays */
-}
-
-.project-image {
-    flex: 1; /* Allow image to take up available space */
-    max-width: 50%; /* Limit the width of the image */
-}
-
-.project-image img {
-    border-radius: 10px; /* Rounded corners for the image */
-    max-width: 100%; /* Ensure image scales with container */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.project-description {
-    flex: 2; /* Allow description to take up remaining space */
-    color: #fff; /* Text color for the description */
-    max-width: 50%; /* Limit the width of the description */
-}
-
-.project-description h3 {
-    font-size: 24px; /* Title font size */
-    margin-bottom: 10px; /* Space below the title */
-}
-
-.project-description p {
-    font-size: 18px; /* Description font size */
-    line-height: 1.6; /* Line height for readability */
-}
-
-.projects-grid {
-    flex: 1; /* Grow and shrink as needed */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    background-color: black;
-    border-radius: 15px; /* Rounded corners for the black box */
-    padding: 15px;
-    min-width: 300px; /* Set a minimum width to prevent items from getting too small */
-}
-
-.projects-grid img {
-    border-radius: 10px; /* Rounded corners for project images */
-    max-width: 100%;
-    height: auto;
-}
-
 /* Basic modal styling */
 .modal {
     display: none; /* Hidden by default */
@@ -270,8 +208,8 @@ section#about {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    overflow: hidden; /* Disable scrolling */
+    background-color: black; /* Black background */
 }
 
 .modal-content {
@@ -279,6 +217,9 @@ section#about {
     display: block;
     max-width: 80%; /* Limit image size in the modal */
     max-height: 80vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Center the image vertically */
 }
 
 /* Style for the modal arrows */
@@ -310,7 +251,6 @@ section#about {
     color: rgba(255, 255, 255, 0.8);
 }
 
-
 .close {
     position: absolute;
     top: 20px;
@@ -323,13 +263,13 @@ section#about {
 
 .enlargeable {
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.4s, filter 0.4s; /* Slow down the animation */
 }
 
 .enlargeable:hover {
-    transform: scale(1.05); /* Zoom-in effect on hover */
+    transform: scale(0.99); /* Scale down slightly */
+    filter: brightness(0.8); /* Subtle darkening effect */
 }
-
 
 /* Contact Styles */
 section#contact ul {
@@ -411,7 +351,6 @@ video {
         display: none; /* Hide the overlay on mobile */
     }
 
-
     /* About Section */
     section#about {
         background: #ffffff; /* White background */
@@ -434,43 +373,29 @@ video {
         height: 120px; /* Adjust size for mobile */
     }
 
-    /* Projects Grid */
-    .projects-container {
-        flex-direction: column;
-        gap: 10;
-        align-items: center;
-        padding: 0%;
-
     }
-
-    .project-display {
-    display: block;
-    align-items: center; /* Vertically center the content */
-    gap: 20px; /* Space between image and description */
-    background-color: #000; /* Background color for the entire section */
-    border-radius: 0px; /* Rounded corners */
-    padding: 20px; /* Padding inside the container */
-    max-width: 100%; /* Ensure it does not exceed the container width */
-    
-    }
-
-    .project-image img {
-        max-width: 160%;
-        align-items: center;
-    }
-
-    .project-description {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .projects-grid {
-        display:block;
+    .gallery-grid {
         column-count: 2;
         padding: 10px; /* Adjust padding for mobile */
     }
 
-    .projects-grid img {
-        max-width: 100%; /* Ensure images scale well on smaller screens */
-    }
+.gallery-grid {
+    column-count: 5;
+    column-gap: 15px;
+    background-color: black;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto; /* Center the grid */
+}
+
+.gallery-grid img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 0px; /* Rounded corners for gallery images */
+}
+
+.gallery-video {
+    width: 100%;
+    margin-bottom: 15px;
+
 }

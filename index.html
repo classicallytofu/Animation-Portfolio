@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Assets/Backround-2_0001_crown.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Import professional sans serif font -->
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Christopher Hagedon</h1>
-            <nav>
+            <h1>CHRISTOPHER HAGEDON</h1>
+            <!-- <nav>
                 <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="animation.html">Animation</a></li>
                 </ul>
-            </nav>
+            </nav> -->
         </div>
     </header>
 
@@ -50,50 +50,57 @@
             <div class="about-text-with-instagram">
                 <!-- About Text Section -->
                 <div class="about-text">
-                    <p>Hello! I'm Christopher Hagedon, an art student at the University of Arizona with a passion for animation, design, and storytelling. My goal is to use my skills to create meaningful content.</p>
+                    <p>Hello! I'm Christopher Hagedon, an art student at the University of Arizona with a passion for animation, design, and storytelling.</p>
                     <ul class="social-links">
                         <li><a href="https://www.linkedin.com/in/christopher-hagedon-786078229/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
+                    <!-- <a href="about.html" class="btn">Learn More About Me</a> Added CTA Button -->
                 </div>
             </div>
         </div>
     </section>
-    
 
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-            </div>
-            <div class="projects-grid"> 
-                 <img src="Assets/IMG_0329.PNG" alt="" class="enlargeable">
-                <img src="Assets/IMG_0209.JPG" alt="" class="enlargeable">
-                <img src="Assets/IMG_0210.JPG" alt="" class="enlargeable">
-                <img src="Assets/IMG_0241.PNG" alt="" class="enlargeable">
-                <img src="Assets/IMG_0314.JPG" alt="" class="enlargeable">
-                <img src="Assets/head turn.gif" alt="Character Head Turn Animation" class="enlargeable"> 
-                <img src="Assets/Anime dude.jpeg" alt="Anime Character Design" class="enlargeable"> 
-                <img src="Assets/IMG_20240720_221857_715.jpg" alt="Desert Scene" class="enlargeable"> 
-                <img src="Assets/Balder~2.jpg" alt="Character Illustration - Balder" class="enlargeable"> 
-                <img src="Assets/IMG_0153.JPG" alt="Yearbook Cover Design 2024" class="enlargeable"> 
-                <img src="Assets/My Stop Motion Movie(6).gif" alt="Stop Motion Animation" class="enlargeable"> 
-                <img src="Assets/Characterheadturnloomis2.gif" alt="Character Head Turn Animation" class="enlargeable"> 
-                <img src="Assets/IMG_0174.JPG" alt="Character" class="enlargeable"> 
-                <img src="Assets/IMG_0150.JPG" alt="Character" class="enlargeable">
-                <img src="Assets/wiimote.png" alt="wiimote" class="enlargeable">
-                <img src="Assets/grapes.jpg" alt="grapes" class="enlargeable">
-                <img src="Assets/illustrative monocrome superhero.jpg" alt="illustrative monocrome superhero" class="enlargeable">
-                <img src="Assets/Psalm_91_4.png" alt="" class="enlargeable">
-            </div>
-            <!-- Embedded Instagram Feed -->
-        <div class="instagram-embed">
-            <iframe src="https://www.instagram.com/artisticallytofu/embed" width="320" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
+    <section id="gallery" class="container">
+        <div id="gallery-background"></div>
+        <div class="gallery-grid">
+            <img src="Assets/IMG_0329.PNG" alt="" class="enlargeable">
+            <img src="Assets/Anime dude.jpeg" alt="Anime Character Design" class="enlargeable">
+            <img src="Assets/IMG_0209.JPG" alt="" class="enlargeable">
+            <img src="Assets/IMG_0210.JPG" alt="" class="enlargeable">
+            <img src="Assets/IMG_0174.JPG" alt="Character" class="enlargeable">
+            <img src="Assets/IMG_0150.JPG" alt="Character" class="enlargeable">
+            <img src="Assets/IMG_20240720_221857_715.jpg" alt="Desert Scene" class="enlargeable">
+            <img src="Assets/wiimote.png" alt="wiimote" class="enlargeable">
+            <img src="Assets/illustrative monocrome superhero.jpg" alt="illustrative monocrome superhero" class="enlargeable">
+            <img src="Assets/manSidespiderweb~2.jpg" alt="" class="enlargeable">
+            <img src="Assets/Balder~2.jpg" alt="Character Illustration - Balder" class="enlargeable">
+            <img src="Assets/IMG_0153.JPG" alt="Yearbook Cover Design 2024" class="enlargeable">
+            <img src="Assets/Psalm_91_4.png" alt="" class="enlargeable">
+            <img src="Assets/IMG_0241.PNG" alt="" class="enlargeable">
+            <img src="Assets/IMG_0314.JPG" alt="" class="enlargeable">
+            <img src="Assets/head turn.gif" alt="Character Head Turn Animation" class="enlargeable">
+            <img src="Assets/Characterheadturnloomis2.gif" alt="Character Head Turn Animation" class="enlargeable">
+            <img src="Assets/My Stop Motion Movie(6).gif" alt="Stop Motion Animation" class="enlargeable">
+            <img src="Assets/IMG_0391 (1).gif" alt="" class="enlargeable">
+            <img src="Assets/grapes.jpg" alt="grapes" class="enlargeable">
+            <img src="Assets/IMG_0295 (1).jpg" alt="" class="enlargeable">
+            <img src="Assets/IMG_0406.jpg" alt="" class="enlargeable">
         </div>
     </section>
     
+    <section id="animation" class="container">
+        <video controls class="gallery-video">
+            <source src="Assets/Animation Reel - Christopher Hagedon 2024.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
     <!-- Modal structure -->
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
     </div>
 
     <section id="contact" class="container">
@@ -108,7 +115,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Christopher Hagedon. All rights reserved.</p>
+            <p>&copy; 2025 Christopher Hagedon. All rights reserved.</p>
         </div>
     </footer>
 
